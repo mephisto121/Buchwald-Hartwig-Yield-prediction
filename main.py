@@ -12,9 +12,9 @@ def seperatior_checker(rxn):
                 if Chem.MolFromSmiles(smiles)!=None:
                     continue
                 else:
-                    raise SyntaxError(f'Invalid Smiles in reactants {smiles}')
+                    raise ValueError(f'Invalid Smiles in reactants {smiles}')
         else:
-            raise SyntaxError(f'Invalid Smiles in product {product}')
+            raise ValueError(f'Invalid Smiles in product {product}')
 
     return True
 
