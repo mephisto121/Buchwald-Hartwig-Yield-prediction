@@ -21,7 +21,7 @@ def seperatior_checker(rxn):
 def parse_args():
 
     parser = argparse.ArgumentParser(description='Run Buchwald Hartwig Yield prediction from command line')
-    parser.add_argument('-s', '--reaction', default="Nc1cccc2cnccc12.O=C(O)c1cc([N+](=O)[O-])c(Sc2c(Cl)cncc2Cl)s1>>O=C(Nc1cccc2cnccc12)c1cc([N+](=O)[O-])c(Sc2c(Cl)cncc2Cl)s1", type = str, 
+    parser.add_argument('-s', '--reaction', default=None, type = str, 
                         help='Reaction input for yield predictions')
     parser.add_argument('-n', '--name', default='test_reaction', help='The name of the molecule')
 
