@@ -32,7 +32,7 @@ if __name__ == '__main__':
     if bool(args.reaction) == True:
         if seperatior_checker(args.reaction) == True:
             model = ClassificationModel('roberta', 'Parsa/Buchwald-Hartwig-Yield-prediction',use_cuda=False)
-            pred, _ = model.predict([args.reaction])
+            _, pred = model.predict([args.reaction])
             print(f'{abs(pred)*100} %')
 
         else:
