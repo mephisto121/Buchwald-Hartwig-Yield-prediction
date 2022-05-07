@@ -1,6 +1,7 @@
 from simpletransformers.classification import ClassificationModel
 from rdkit import Chem
 import argparse
+import numpy as np
 
 def seperatior_checker(rxn):
     if rxn.find('>>')!=-1:
@@ -34,7 +35,7 @@ if __name__ == '__main__':
             model = ClassificationModel('roberta', 'Parsa/Buchwald-Hartwig-Yield-prediction',use_cuda=False, num_labels=1, args={
                                       "regression": True})
             pred, _ = model.predict([args.reaction])
-            print(f'{round(abs(pred)*100, 2)} %')
+            print(f'{round(abs(np.clip(pred, 0,1)*100, 2)} %')
 
         else:
             print('Invalid Reaction')
