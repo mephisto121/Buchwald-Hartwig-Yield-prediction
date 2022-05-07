@@ -34,7 +34,7 @@ if __name__ == '__main__':
             model = ClassificationModel('roberta', 'Parsa/Buchwald-Hartwig-Yield-prediction',use_cuda=False, num_labels=1, args={
                                       "regression": True})
             pred, _ = model.predict([args.reaction])
-            print(f'{abs(pred)*100} %')
+            print(f'{round(abs(pred)*100, 2)} %')
 
         else:
             print('Invalid Reaction')
